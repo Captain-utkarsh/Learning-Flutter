@@ -1,0 +1,25 @@
+
+import 'package:flutter/material.dart';
+import 'package:login_signup/dashboard.dart';
+import 'package:login_signup/signup.dart';
+
+import 'homepage.dart';
+
+void main(List<String> args) {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.blue),
+    );
+  }
+}
+
+
