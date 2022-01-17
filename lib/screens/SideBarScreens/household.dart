@@ -5,15 +5,12 @@ class HouseHold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
         child: Scaffold(
-            appBar: AppBar(
-              title: const Text('HouseHold Page'),
-            ),
             body: Center(
                 child: Text(
-              'Household Page',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-            ))));
+      'Household Page',
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+    ))));
   }
 }

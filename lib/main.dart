@@ -1,12 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:login_signup/dashboard.dart';
-import 'package:login_signup/signup.dart';
 
 import 'homepage.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,10 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
       theme: ThemeData(primarySwatch: Colors.blue),
     );
   }
 }
-
-
