@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup/screens/widget/itemcard.dart';
+import 'package:login_signup/models/list.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:login_signup/utils/database_helper.dart';
+// import '../utils/d';
 
 class ListOfItems extends StatefulWidget {
   const ListOfItems({Key? key}) : super(key: key);
@@ -9,6 +13,11 @@ class ListOfItems extends StatefulWidget {
 }
 
 class _ListOfItemsState extends State<ListOfItems> {
+
+  DatabaseHelper databaseHelper = DatabaseHelper();
+  late List<Lists> lists;
+  int count = 0;
+
   final listValues = <Map>[
     {
       'Title': 'Home',
@@ -68,10 +77,10 @@ class _ListOfItemsState extends State<ListOfItems> {
         itemCount: listValues.length,
         itemBuilder: (BuildContext context, int index) {
           return ItemCard(
-            title: listValues[index]['Title'],
-            description: listValues[index]['Description'],
-            total: listValues[index]['Totals'],
-            amount: listValues[index]['Amount'],
+            title: this.lists[index].listname,
+            description: this.lists[index].listtype,
+            total: this.lists[index].totalItem,
+            amount: this.lists[index].totalAmount,
           );
         },
       ),

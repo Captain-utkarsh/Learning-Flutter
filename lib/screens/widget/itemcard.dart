@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import 'list_item_details.dart';
+
 class ItemCard extends StatelessWidget {
   final String title;
   final String description;
@@ -19,14 +21,14 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //       builder: (context) => ListItemDetails(
-        //             title: cardTitle,
-        //             description: cardDescription,
-        //           )),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ListItemDetails(
+                    title: title,
+                    description: description,
+                  )),
+        );
       },
       child: Card(
         margin: const EdgeInsets.all(10),
