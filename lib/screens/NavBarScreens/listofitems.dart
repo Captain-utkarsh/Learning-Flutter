@@ -13,10 +13,54 @@ class ListOfItems extends StatefulWidget {
 }
 
 class _ListOfItemsState extends State<ListOfItems> {
-
+  
   DatabaseHelper databaseHelper = DatabaseHelper();
-  late List<Lists> lists;
+  int list_id = 1;
+
+  void addList() async {
+    Lists listModelObject = Lists(
+        listName: "name", listtype: "type", totalItem: -1, totalAmount: -1);
+    setState(() {
+      lists.add(listModelObject);
+    });
+  }
+
+  void initialInsert() async {
+    for (int i = 0; i < listValues.length; i++) {
+      Lists listObject = Lists(
+          // id: list_id,
+          listName: listValues[i]['Title'],
+          listtype: listValues[i]['Description'],
+          totalItem: listValues[i]['Totals'],
+          totalAmount: listValues[i]['Amount']);
+      databaseHelper.insertList(listObject);
+    }
+    print((await databaseHelper.queryListCount()).toString());
+  }
+
+  List<Lists> lists = [];
   int count = 0;
+
+  void fetchLists() async {
+    final listList = await databaseHelper.queryAllLists();
+    print(listList.length);
+    for (int i = 0; i < listList.length; i++) {
+      Lists listModelObject = Lists(
+          listName: "--DUMMY--",
+          listtype: "--DUMMY--",
+          totalItem: -1,
+          totalAmount: -1);
+      listModelObject.fromMapObject(listList[i]);
+      setState(() {
+        lists.add(listModelObject);
+      });
+    }
+  }
+
+  _ListOfItemsState() {
+    //initialInsert();
+    fetchLists();
+  }
 
   final listValues = <Map>[
     {
@@ -71,19 +115,27 @@ class _ListOfItemsState extends State<ListOfItems> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: listValues.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ItemCard(
-            title: this.lists[index].listname,
-            description: this.lists[index].listtype,
-            total: this.lists[index].totalItem,
-            amount: this.lists[index].totalAmount,
-          );
-        },
+    //fetchLists();
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: addList,
+        child: Icon(Icons.add),
+      ),
+      body: Center(
+        child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: lists.length,
+          itemBuilder: (BuildContext context, int index) {
+            return ItemCard(
+              title: lists[index].listName,
+              description: lists[index].listtype,
+              total: lists[index].totalItem,
+              amount: lists[index].totalAmount,
+            );
+          },
+        ),
       ),
     );
   }
 }
+//lists[index].listName

@@ -1,14 +1,14 @@
 class Lists
 {
-  late int id ;
-  late String listname ;
+  // int id = 0 ;
+  late String listName ;
   late String listtype ;
   late int totalItem ;
   late int totalAmount ;
 
   Lists({
-    required this.id,
-    required this.listname,
+    // required this.id,
+    required this.listName,
     required this.listtype,
     required this.totalItem,
     required this.totalAmount,
@@ -39,25 +39,25 @@ class Lists
  Map<String, dynamic> toMap(){
    var map = Map<String, dynamic>();
 
-   if(id != null)
-   {
-     map['id'] = id;
-   }
-   map['listname'] = listname;
-   map['listtype'] = listtype;
-   map['totalitem'] = totalItem;
-   map['totalamount'] = totalAmount;
+  //  if(id != null)
+  //  {
+  //    map['id'] = id;
+  //  }
+   map['list_name'] = listName;
+   map['list_type'] = listtype;
+   map['total_item'] = totalItem;
+   map['total_amount'] = totalAmount;
 
    return map;
  }
 
  //For extracting the Original Object from Map Object
-  Lists.fromMapObejct(Map<String, dynamic> map){
-    this.id = map['id'];
-    this.listname = map['listname'];
-    this.listtype = map['listtype'];
-    this.totalItem = map['totalitem'];
-    this.totalAmount = map['totalamount'];
+  fromMapObject(Map<String, dynamic> map){
+    // this.id = map['id'];
+    this.listName = map['list_name'];
+    this.listtype = map['list_type'];
+    this.totalItem = map['total_item'];
+    this.totalAmount = map['total_amount'];
   }
 
 }
