@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_signup/screens/widget/custom_addition.dart';
 import 'package:login_signup/screens/widget/itemcard.dart';
 import 'package:login_signup/models/list.dart';
 import 'package:sqflite/sqflite.dart';
@@ -6,20 +7,33 @@ import 'package:login_signup/utils/database_helper.dart';
 // import '../utils/d';
 
 class ListOfItems extends StatefulWidget {
-  const ListOfItems({Key? key}) : super(key: key);
+  //const ListOfItems({Key? key}) : super(key: key);
 
+  var customListName;
+  var customListType;
+  var customTotalItems;
+  var customTotalAmount;
+
+  ListOfItems(
+      {this.customListName,
+      this.customListType,
+      this.customTotalItems,
+      this.customTotalAmount});
   @override
   _ListOfItemsState createState() => _ListOfItemsState();
 }
 
 class _ListOfItemsState extends State<ListOfItems> {
-  
+  TextEditingController _listName = TextEditingController();
   DatabaseHelper databaseHelper = DatabaseHelper();
   int list_id = 1;
 
   void addList() async {
     Lists listModelObject = Lists(
-        listName: "name", listtype: "type", totalItem: -1, totalAmount: -1);
+        listName: _listName.text,
+        listtype: 'Private',
+        totalItem: 69,
+        totalAmount: 420);
     setState(() {
       lists.add(listModelObject);
     });
@@ -117,9 +131,29 @@ class _ListOfItemsState extends State<ListOfItems> {
   Widget build(BuildContext context) {
     //fetchLists();
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: addList,
-        child: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.blue[800],
+        focusColor: Colors.blue[300],
+        onPressed: () {
+          setState(() {
+            addList();
+            _listName.text = '';
+          });
+        },
+        label: Row(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.75,
+              child: TextField(
+                decoration: const InputDecoration(
+                  labelText: 'List Name ',
+                ),
+                controller: _listName,
+              ),
+            ),
+            const Icon(Icons.add)
+          ],
+        ),
       ),
       body: Center(
         child: ListView.builder(
@@ -138,4 +172,62 @@ class _ListOfItemsState extends State<ListOfItems> {
     );
   }
 }
-//lists[index].listName
+//lists[index].listName 
+
+// SizedBox(
+//         width: MediaQuery.of(context).size.width * 1,
+//         height: MediaQuery.of(context).size.height * 0.05,
+//         // color: Colors.lightBlueAccent,
+//         child: FittedBox(
+//           fit: BoxFit.values(20, 20),
+//           child: FloatingActionButton(
+//               onPressed: () {
+//                 CustomAddList();
+//                 Navigator.push(
+//                     context,
+//                     MaterialPageRoute(
+//                         builder: (context) => const CustomAddList()));
+//               },
+//               child: Center(
+//                 child: TextFormField(
+//                   obscureText: false,
+//                   decoration: InputDecoration(
+//                       border: OutlineInputBorder(
+//                         borderRadius: BorderRadius.circular(8),
+//                       ),
+//                       labelText: 'List Name ',
+//                       hintText: 'Enter your List Name '),
+//                 ),
+//               )),
+//         ),
+//       )
+// Padding(
+//         padding: const EdgeInsets.fromLTRB(35, 0, 2, 0),
+//         child: Container(
+//           width: double.infinity,
+//           height: 50,
+//           color: Colors.lightBlueAccent,
+//           child: RawMaterialButton(
+//             shape: const CircleBorder(),
+//             elevation: 0.0,
+//             child: TextFormField(
+//                 controller: _listName,
+//                 decoration: InputDecoration(
+//                   border: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(8),
+//                   ),
+//                   labelText: 'List Name ',
+//                 ),
+//                 onFieldSubmitted: (BuildContext) {
+//                   setState(() {
+//                     widget.customListName = _listName;
+//                     addList();
+//                     _listName.text = '';
+//                   });
+//                 }),
+//             onPressed: () {
+//               print(_listName);
+//             },
+//           ),
+//         ),
+//       ),

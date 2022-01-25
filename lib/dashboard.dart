@@ -12,6 +12,7 @@ import 'package:login_signup/screens/SideBarScreens/household.dart';
 import 'package:login_signup/screens/NavBarScreens/listofitems.dart';
 import 'package:login_signup/screens/NavBarScreens/more.dart';
 import 'package:login_signup/screens/NavBarScreens/people.dart';
+import 'package:login_signup/screens/widget/custom_addition.dart';
 
 import 'naivgationdrawer.dart';
 import 'screens/SideBarScreens/password.dart';
@@ -34,7 +35,7 @@ class _DashBoardState extends State<DashBoard> {
   final screens = [
     const Home(),
     const People(),
-    const ListOfItems(),
+    ListOfItems(),
     const Categories(),
     const MoreItems(),
     const PaymentMethod(),
@@ -46,6 +47,7 @@ class _DashBoardState extends State<DashBoard> {
     const TermsAndCondition(),
     const FAQ(),
     const AboutApp(),
+    const CustomAddList()
   ];
 
   void _updateBottomBarScreenIndex(int index) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_signup/dashboard.dart';
 
 import 'homepage.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const DashBoard(),
       theme: ThemeData(primarySwatch: Colors.blue),
     );
   }
