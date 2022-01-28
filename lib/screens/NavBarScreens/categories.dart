@@ -17,7 +17,7 @@ class _CategoriesState extends State<Categories> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            Text('Categories',style: TextStyle(
+            const Text('Categories',style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),),
@@ -39,7 +39,7 @@ class _CategoriesState extends State<Categories> {
                 //exit(0);
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 'Back ',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,

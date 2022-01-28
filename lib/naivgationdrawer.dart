@@ -13,14 +13,14 @@ import 'package:login_signup/screens/SideBarScreens/user_info.dart';
 
 class NavigationDrawer extends StatefulWidget {
   final ValueChanged<int> updateIndex;
-  NavigationDrawer({Key? key, required this.updateIndex}) : super(key: key);
+  const NavigationDrawer({Key? key, required this.updateIndex}) : super(key: key);
 
   @override
   State<NavigationDrawer> createState() => _NavigationDrawerState();
 }
 
 class _NavigationDrawerState extends State<NavigationDrawer> {
-  final drawerscreen = [PaymentMethod(), Address(), Password(), HouseHold(),UserInfo(),ContactUs(),TermsAndCondition(),FAQ(),AboutApp()];
+  final drawerscreen = [const PaymentMethod(), const Address(), const Password(), const HouseHold(),const UserInfo(),const ContactUs(),const TermsAndCondition(),const FAQ(),const AboutApp()];
   int screenvar = 0;
 
   @override
@@ -31,7 +31,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
         child: ListView(
           children: [
             DrawerHeader(
-                decoration: BoxDecoration(color: Colors.indigoAccent),
+                decoration: const BoxDecoration(color: Colors.indigoAccent),
                 child: Row(
                   children: [
                     Container(
@@ -103,8 +103,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               thickness: 1.5,
             ),
             ListTile(
-              leading: Icon(Icons.info),
-              title: Text('User info'),
+              leading: const Icon(Icons.info),
+              title: const Text('User info'),
               onTap: () {
                 Navigator.pop(context);
                 widget.updateIndex(4);
@@ -113,8 +113,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.message_rounded),
-              title: Text('Contact Us'),
+              leading: const Icon(Icons.message_rounded),
+              title: const Text('Contact Us'),
               onTap: () {
                 Navigator.pop(context);
                 widget.updateIndex(5);
@@ -123,8 +123,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.library_books_outlined),
-              title: Text('Terms & Conditions'),
+              leading: const Icon(Icons.library_books_outlined),
+              title: const Text('Terms & Conditions'),
               onTap: () {
                 Navigator.pop(context);
                 widget.updateIndex(6);
@@ -133,8 +133,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.question_answer_rounded),
-              title: Text('FAQ'),
+              leading: const Icon(Icons.question_answer_rounded),
+              title: const Text('FAQ'),
               onTap: () {
                 Navigator.pop(context);
                 widget.updateIndex(7);
@@ -143,8 +143,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.app_settings_alt_outlined),
-              title: Text('About the App'),
+              leading: const Icon(Icons.app_settings_alt_outlined),
+              title: const Text('About the App'),
               onTap: () {
                 Navigator.pop(context);
                 widget.updateIndex(8);
@@ -153,8 +153,8 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Log out'),
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text('Log out'),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HomePage()));

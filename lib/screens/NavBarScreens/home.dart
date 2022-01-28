@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
             ),
-            Text(
+            const Text(
               'Home page !',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
                 //exit(0);
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 'Back ',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,

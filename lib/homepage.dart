@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
     // final hashValue = sha256Digest
     //     .process(Uint8List.fromList(utf8.encode(passwordController.text)));
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => DashBoard()));
+        context, MaterialPageRoute(builder: (context) => const DashBoard()));
   }
 
   @override
@@ -68,30 +68,30 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Trial App'),
+        title: const Text('Trial App'),
       ),
       body: Container(
-        margin: EdgeInsets.all(10.0),
-        padding: EdgeInsets.all(5.0),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(5.0),
+        decoration: const BoxDecoration(
             // border: Border.all(color: Colors.blueAccent, width: 4.0),
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(15.0))),
         child: Center(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: Image.asset('assets/images/signin.jpg')),
-              Text(
+              const Text(
                 'Login Page',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               TextFormField(
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     labelText: 'Password ',
                     hintText: 'Enter your Password'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               TextButton(
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.all(Radius.circular(2))),
                 ),
                 onPressed: submitData,
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -138,10 +138,10 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white),
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: SizedBox(),
               ),
-              Text('New here Sign Up !'),
+              const Text('New here Sign Up !'),
               TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Signup()));
                 },
-                child: Text(
+                child: const Text(
                   'Sign Up',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,

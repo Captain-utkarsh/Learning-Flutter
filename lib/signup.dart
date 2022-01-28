@@ -9,30 +9,30 @@ class Signup extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: const Text('Sign Up'),
       ),
       body: Container(
-        margin: EdgeInsets.all(10.0),
-        padding: EdgeInsets.all(5.0),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(5.0),
+        decoration: const BoxDecoration(
             // border: Border.all(color: Colors.blueAccent, width: 4.0),
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(15.0))),
         child: Center(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: Image.asset('assets/images/signup.jpeg')),
-              Text(
+              const Text(
                 'Sign Up Page',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               TextFormField(
@@ -68,7 +68,7 @@ class Signup extends StatelessWidget {
                     labelText: 'Confirm Password ',
                     hintText: 'Re-enter your Password'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               TextButton(
@@ -84,7 +84,7 @@ class Signup extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => const DashBoard()));
                 },
-                child: Text(
+                child: const Text(
                   'Sign Up',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class Signup extends StatelessWidget {
                       color: Colors.white),
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: SizedBox(),
               ),
             ],

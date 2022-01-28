@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:login_signup/models/list.dart';
+import 'package:login_signup/utils/database_helper.dart';
 
 import 'list_item_details.dart';
 
-class ItemCard extends StatelessWidget {
+class ItemCard extends StatefulWidget {
   final String title;
   final String description;
   final int total;
   final int amount;
-
+  final Function refreshStateFunction;
+  final int listId;
   const ItemCard(
       {Key? key,
+      required this.listId,
       required this.title,
       required this.description,
       required this.total,
-      required this.amount})
+      required this.amount,
+      required this.refreshStateFunction})
       : super(key: key);
+
+  @override
+  State<ItemCard> createState() => _ItemCardState();
+}
+
+class _ItemCardState extends State<ItemCard> {
+  List<Lists> listModelObjects = [];
+
+  DatabaseHelper listDbHelper = DatabaseHelper();
+
+  TextEditingController listNameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +40,10 @@ class ItemCard extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) => ListItemDetails(
-                    title: title,
-                    description: description,
+                    refreshStateFunction: widget.refreshStateFunction,
+                    listId: widget.listId,
+                    title: widget.title,
+                    description: widget.description,
                   )),
         );
       },
@@ -50,13 +67,13 @@ class ItemCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          title,
-                          style: TextStyle(
+                          widget.title,
+                          style: const TextStyle(
                               fontSize: 22.0, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          description,
-                          style: TextStyle(fontSize: 14.0),
+                          widget.description,
+                          style: const TextStyle(fontSize: 14.0),
                         ),
                       ],
                     ),
@@ -77,10 +94,10 @@ class ItemCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Totals: ${total.toString()}"),
+                    Text("Totals: ${widget.total.toString()}"),
                     Text(
-                      '\$ ${amount.toString()}',
-                      style: TextStyle(
+                      '\$ ${widget.amount.toString()}',
+                      style: const TextStyle(
                           fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -93,67 +110,3 @@ class ItemCard extends StatelessWidget {
     );
   }
 }
-// Scaffold(
-//       body: Container(
-//       padding: const EdgeInsets.all(20),
-//       child: Column(
-//         mainAxisSize: MainAxisSize.min,
-//         children: [
-//           Card(
-//             elevation: 5.0,
-//             child: SizedBox(
-//               height: 90,
-//               child: Row(
-//                 children: [
-//                   const SizedBox(
-//                     width: 10.0,
-//                   ),
-//                   Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Text(
-//                         title,
-//                         style: TextStyle(
-//                             fontSize: 16.0, fontWeight: FontWeight.w700),
-//                       ),
-//                       Text(
-//                         description,
-//                         style: TextStyle(fontSize: 12.0),
-//                       ),
-//                       SizedBox(
-//                         height: 10.0,
-//                       ),
-//                       Image(
-//                           image: AssetImage("assets/images/company.jpeg")),
-//                     ],
-//                   ),
-//                   // const Expanded(child: SizedBox()),
-//                   Container(
-//                       decoration: BoxDecoration(
-//                           color: Colors.blueAccent,
-//                           borderRadius: const BorderRadius.only(
-//                               topRight: Radius.circular(5),
-//                               bottomRight: Radius.circular(5))),
-//                       height: 90,
-//                       width: 79,
-//                       child: Column(
-//                         mainAxisAlignment: MainAxisAlignment.center,
-//                         // crossAxisAlignment: CrossAxisAlignment.start,
-//                         children: [
-//                           Text(
-//                             'Totals ${total.toString()}',
-//                             style: TextStyle(fontSize: 12.0),
-//                           ),
-//                           Text(
-//                             '\$ ${amount.toString()}',
-//                             style: TextStyle(fontSize: 18.0),
-//                           ),
-//                         ],
-//                       ))
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ],
-//       )),
-//     );
