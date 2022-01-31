@@ -48,6 +48,23 @@ class _DashBoardState extends State<DashBoard> {
     const AboutApp(),
   ];
 
+  final titles = [
+    'Home Page',
+    'Peoples',
+    'Lists',
+    'Categories',
+    'More Items',
+    'Payment Methods',
+    'Address',
+    'Password',
+    'Household',
+    'User Info',
+    'Contact Us',
+    'Terms & Conditions',
+    'FAQ',
+    'About App',
+  ];
+
   void _updateBottomBarScreenIndex(int index) {
     setState(() {
       _bottomBarSelectedIndex = index;
@@ -65,7 +82,9 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: Text(_sideBarSelectedIndex < 0
+            ? titles[_bottomBarSelectedIndex]
+            : titles[bottomScreensCount + _sideBarSelectedIndex]),
       ),
       drawer: NavigationDrawer(
         updateIndex: _updateSideBarScreenIndex,

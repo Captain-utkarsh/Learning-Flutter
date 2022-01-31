@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup/dashboard.dart';
+import 'package:login_signup/models/vendors.dart';
+import 'package:provider/provider.dart';
 
 void main(List<String> args) {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context)=> VendorModel())
+  ],
+  
+  child:MyApp() ,),
+    );
 }
 
 class MyApp extends StatelessWidget {
