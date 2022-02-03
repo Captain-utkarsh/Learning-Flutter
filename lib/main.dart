@@ -8,7 +8,7 @@ void main(List<String> args) {
     ChangeNotifierProvider(create: (context)=> VendorModel())
   ],
   
-  child:MyApp() ,),
+  child:const MyApp() ,),
     );
 }
 

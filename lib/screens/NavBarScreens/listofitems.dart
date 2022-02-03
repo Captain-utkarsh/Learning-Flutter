@@ -13,7 +13,7 @@ class ListOfItems extends StatefulWidget {
 
 class _ListOfItemsState extends State<ListOfItems> {
   List<Lists> listModelObjects = [];
-  TextEditingController _listName = TextEditingController();
+  TextEditingController listName = TextEditingController();
   DatabaseHelper databaseHelper = DatabaseHelper();
 
   void refreshState() {
@@ -40,7 +40,7 @@ class _ListOfItemsState extends State<ListOfItems> {
   void addList() async {
     Lists listModelObject = Lists(
         id: -1,
-        listName: _listName.text,
+        listName: listName.text,
         listtype: 'Private',
         totalItem: 0,
         totalAmount: 0);
@@ -83,7 +83,7 @@ class _ListOfItemsState extends State<ListOfItems> {
         onPressed: () {
           setState(() {
             addList();
-            _listName.text = '';
+            listName.text = '';
           });
         },
         label: Row(
@@ -94,7 +94,7 @@ class _ListOfItemsState extends State<ListOfItems> {
                 decoration: const InputDecoration(
                   labelText: 'List Name',
                 ),
-                controller: _listName,
+                controller: listName,
               ),
             ),
             const Icon(Icons.add)

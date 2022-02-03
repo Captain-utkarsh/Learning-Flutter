@@ -14,9 +14,9 @@ class _HomeState extends State<Home> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  static final baseURL =
+  static const baseURL =
       "https://e3-qkmountain.qkinnovations.com/qkm-andermatt-backend/api/";
-  static final postsEndpoint = baseURL + "user/appLogin";
+  static const postsEndpoint = baseURL + "user/appLogin";
   int deviceToken = 1;
   String? deviceType = "A";
   int categoryId = 2;
@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
               ),
               TextButton(
                 onPressed: createPost,
-                child: Text(
+                child: const Text(
                   'Submit',
                   style: TextStyle(color: Colors.white),
                 ),

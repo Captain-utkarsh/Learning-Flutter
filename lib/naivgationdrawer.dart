@@ -34,7 +34,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 decoration: const BoxDecoration(color: Colors.indigoAccent),
                 child: Row(
                   children: [
-                    Container(
+                    SizedBox(
                       height: 65.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(100),
@@ -157,7 +157,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               title: const Text('Log out'),
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                    MaterialPageRoute(builder: (context) => const HomePage()));
               },
             ),
           ],

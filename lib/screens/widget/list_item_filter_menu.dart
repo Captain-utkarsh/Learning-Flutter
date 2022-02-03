@@ -259,10 +259,10 @@ class _OfferCheckboxState extends State<OfferCheckbox> {
             value: true,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 7,
         ),
-        Text(
+        const Text(
           "10% off",
           style: TextStyle(
             color: Colors.black,

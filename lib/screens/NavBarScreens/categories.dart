@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -14,8 +11,8 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const WebView(
+    return const Scaffold(
+      body:  WebView(
         initialUrl: 'https://flutter.dev',
       ),
     );

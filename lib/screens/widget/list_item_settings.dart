@@ -5,7 +5,7 @@ class ListItemSettingsMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SimpleDialog(
+    return const SimpleDialog(
       elevation: 15.0,
       title: Text('Settings Menu'),
       titlePadding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),

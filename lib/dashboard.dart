@@ -34,7 +34,7 @@ class _DashBoardState extends State<DashBoard> {
   final screens = [
     const Home(),
     const People(),
-    ListOfItems(),
+    const ListOfItems(),
     const Categories(),
     const MoreItems(),
     const PaymentMethod(),
