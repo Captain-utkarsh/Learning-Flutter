@@ -15,6 +15,7 @@ class _ListOfItemsState extends State<ListOfItems> {
   List<Lists> listModelObjects = [];
   TextEditingController listName = TextEditingController();
   DatabaseHelper databaseHelper = DatabaseHelper();
+  bool loading = false;
 
   void refreshState() {
     listModelObjects = [];
@@ -74,6 +75,23 @@ class _ListOfItemsState extends State<ListOfItems> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  void loadData() async {
+    setState(() {
+      loading = true;
+    });
+    await Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        loading = false;
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     //fetchLists();
     return Scaffold(
@@ -106,17 +124,21 @@ class _ListOfItemsState extends State<ListOfItems> {
           scrollDirection: Axis.vertical,
           itemCount: listModelObjects.length,
           itemBuilder: (BuildContext context, int index) {
-            return ItemCard(
-              listId: listModelObjects[index].id,
-              title: listModelObjects[index].listName,
-              description: listModelObjects[index].listtype,
-              total: listModelObjects[index].totalItem,
-              amount: listModelObjects[index].totalAmount,
-              refreshStateFunction: refreshState,
-            );
+            return loading ? loadingBar() : itemCard(index);
           },
         ),
       ),
     );
   }
+
+  Widget loadingBar() => LoadingItemCard();
+
+  Widget itemCard(index) => ItemCard(
+        listId: listModelObjects[index].id,
+        title: listModelObjects[index].listName,
+        description: listModelObjects[index].listtype,
+        total: listModelObjects[index].totalItem,
+        amount: listModelObjects[index].totalAmount,
+        refreshStateFunction: refreshState,
+      );
 }

@@ -37,6 +37,7 @@ class _PeopleState extends State<People> {
             target: _center,
           ),
           mapType: MapType.normal,
+          myLocationEnabled: true,
           myLocationButtonEnabled: true,
         ),
       ),

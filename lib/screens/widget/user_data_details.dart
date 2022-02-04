@@ -26,8 +26,9 @@ class _UserDetailPageState extends State<UserDetailPage> {
   void _onMapCreated(GoogleMapController _gmcontroller) {
     mapController = _gmcontroller;
     _location.onLocationChanged.listen((event) {
-      mapController?.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-          target: LatLng(event.latitude!, event.longitude!), zoom: 15)));
+      mapController?.animateCamera(CameraUpdate.newCameraPosition(
+          CameraPosition(
+              target: LatLng(event.latitude!, event.longitude!), zoom: 15)));
     });
   }
 
@@ -58,6 +59,8 @@ class _UserDetailPageState extends State<UserDetailPage> {
                     initialCameraPosition: CameraPosition(
                       target: _center,
                     ),
+                    myLocationButtonEnabled: true,
+                    myLocationEnabled: true,
                   ),
                 ),
               ],

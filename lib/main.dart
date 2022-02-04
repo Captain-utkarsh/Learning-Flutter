@@ -4,12 +4,12 @@ import 'package:login_signup/models/vendors.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context)=> VendorModel())
-  ],
-  
-  child:const MyApp() ,),
-    );
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (context) => VendorModel())],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

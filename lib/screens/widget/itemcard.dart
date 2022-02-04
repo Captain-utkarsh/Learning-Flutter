@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup/models/list.dart';
 import 'package:login_signup/utils/database_helper.dart';
+import '../widget/skeleton_container.dart';
 
 import 'list_item_details.dart';
 
@@ -105,6 +106,76 @@ class _ItemCardState extends State<ItemCard> {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class LoadingItemCard extends StatelessWidget {
+  const LoadingItemCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.all(10),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      elevation: 10,
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.13,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      SkeletonContainer.square(
+                        width: 75,
+                        height: 22,
+                      ),
+                      SkeletonContainer.square(
+                        width: 50,
+                        height: 14,
+                      ),
+                    ],
+                  ),
+                  const SkeletonContainer.square(
+                    width: 125,
+                    height: 50,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
+                color: Theme.of(context).primaryColorLight,
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  SkeletonContainer.square(
+                    width: 60,
+                    height: 16,
+                  ),
+                  SkeletonContainer.square(
+                    width: 40,
+                    height: 18,
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
