@@ -15,22 +15,23 @@ class UserDetailPage extends StatefulWidget {
 }
 
 class _UserDetailPageState extends State<UserDetailPage> {
+  int val =0;
   late GoogleMapController? mapController;
   final Location _location = Location();
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
 
-  // void _onMapCreated(GoogleMapController controller) {
-  //   mapController = controller;
-  // }
-  void _onMapCreated(GoogleMapController _gmcontroller) {
-    mapController = _gmcontroller;
-    _location.onLocationChanged.listen((event) {
-      mapController?.animateCamera(CameraUpdate.newCameraPosition(
-          CameraPosition(
-              target: LatLng(event.latitude!, event.longitude!), zoom: 15)));
-    });
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
   }
+  // void _onMapCreated(GoogleMapController _gmcontroller) {
+  //   mapController = _gmcontroller;
+  //   _location.onLocationChanged.listen((event) {
+  //     mapController?.animateCamera(CameraUpdate.newCameraPosition(
+  //         CameraPosition(
+  //             target: LatLng(event.latitude!, event.longitude!), zoom: 15)));
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -42,10 +43,13 @@ class _UserDetailPageState extends State<UserDetailPage> {
             margin: const EdgeInsets.all(20),
             child: Column(
               children: [
-                Image.network(
-                  widget.user.imageUrl,
-                  height: 300,
-                  fit: BoxFit.cover,
+                Hero(
+                  tag: 'Img index $val',
+                  child: Image.network(
+                    widget.user.imageUrl,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 const SizedBox(height: 16),
                 Text(

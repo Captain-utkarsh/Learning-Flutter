@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:login_signup/screens/widget/show_profile.dart';
 
 class PaymentMethod extends StatefulWidget {
   const PaymentMethod({Key? key}) : super(key: key);
@@ -27,6 +28,13 @@ class _PaymentMethodState extends State<PaymentMethod> {
     });
   }
 
+  MaterialPageRoute showProfile() {
+    return MaterialPageRoute(
+        builder: (context) => Profile(
+              image: _image,
+            ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,11 +51,32 @@ class _PaymentMethodState extends State<PaymentMethod> {
         CircleAvatar(
           radius: 100,
           child: _image != null
-              ? ClipRRect(
-                  borderRadius: BorderRadius.circular(200),
-                  child: Image.file(
-                    File(_image!.path),
-                    fit: BoxFit.cover,
+              // ? Image.file(
+              //     File(_image!.path),
+              //     height: 150,
+              //     width: 150,
+              //     fit: BoxFit.cover,
+              //   )
+              ? GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Profile(
+                                  image: _image,
+                                )));
+                  },
+                  child: ClipOval(
+                    //borderRadius: BorderRadius.circular(100),
+                    child: Hero(
+                      tag: 'Selected-Image',
+                      child: Image.file(
+                        File(_image!.path),
+                        height: 200,
+                        width: 200,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                   ),
                 )
               : Container(

@@ -1,0 +1,119 @@
+Date : 2022-02-07 17:58:48
+Directory : /Users/ztlab66/Documents/utkarsh/login_signup
+Total : 58 files,  3037 codes, 360 comments, 318 blanks, all 3715 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Dart       |         34 |      2,484 |        220 |        248 |      2,952 |
+| JSON       |          3 |        180 |          0 |          3 |        183 |
+| XML        |          9 |        125 |         46 |         11 |        182 |
+| Groovy     |          3 |         93 |          3 |         23 |        119 |
+| HTML       |          1 |         80 |         18 |          7 |        105 |
+| YAML       |          2 |         41 |         72 |         12 |        125 |
+| Markdown   |          2 |         13 |          0 |          9 |         22 |
+| Swift      |          1 |         12 |          0 |          2 |         14 |
+| Properties |          2 |          8 |          1 |          2 |         11 |
+| C++        |          1 |          1 |          0 |          1 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                           |         58 |      3,037 |        360 |        318 |      3,715 |
+| android                                                                                                     |         12 |        165 |         48 |         34 |        247 |
+| android/app                                                                                                 |          8 |        122 |         47 |         23 |        192 |
+| android/app/src                                                                                             |          7 |         64 |         44 |          9 |        117 |
+| android/app/src/debug                                                                                       |          1 |          4 |          3 |          1 |          8 |
+| android/app/src/main                                                                                        |          5 |         56 |         38 |          7 |        101 |
+| android/app/src/main/res                                                                                    |          4 |         26 |         32 |          6 |         64 |
+| android/app/src/main/res/drawable                                                                           |          1 |          4 |          7 |          2 |         13 |
+| android/app/src/main/res/drawable-v21                                                                       |          1 |          4 |          7 |          2 |         13 |
+| android/app/src/main/res/values                                                                             |          1 |          9 |          9 |          1 |         19 |
+| android/app/src/main/res/values-night                                                                       |          1 |          9 |          9 |          1 |         19 |
+| android/app/src/profile                                                                                     |          1 |          4 |          3 |          1 |          8 |
+| android/gradle                                                                                              |          1 |          5 |          1 |          1 |          7 |
+| android/gradle/wrapper                                                                                      |          1 |          5 |          1 |          1 |          7 |
+| ios                                                                                                         |          7 |        222 |          2 |          9 |        233 |
+| ios/Runner                                                                                                  |          7 |        222 |          2 |          9 |        233 |
+| ios/Runner/Assets.xcassets                                                                                  |          3 |        148 |          0 |          4 |        152 |
+| ios/Runner/Assets.xcassets/AppIcon.appiconset                                                               |          1 |        122 |          0 |          1 |        123 |
+| ios/Runner/Assets.xcassets/LaunchImage.imageset                                                             |          2 |         26 |          0 |          3 |         29 |
+| ios/Runner/Base.lproj                                                                                       |          2 |         61 |          2 |          2 |         65 |
+| lib                                                                                                         |         33 |      2,470 |        210 |        241 |      2,921 |
+| lib/models                                                                                                  |          3 |         76 |         17 |         23 |        116 |
+| lib/screens                                                                                                 |         23 |      1,697 |        142 |        154 |      1,993 |
+| lib/screens/NavBarScreens                                                                                   |          5 |        525 |         89 |         48 |        662 |
+| lib/screens/SideBarScreens                                                                                  |          9 |        234 |         42 |         35 |        311 |
+| lib/screens/widget                                                                                          |          9 |        938 |         11 |         71 |      1,020 |
+| lib/utils                                                                                                   |          1 |        145 |         23 |         29 |        197 |
+| test                                                                                                        |          1 |         14 |         10 |          7 |         31 |
+| web                                                                                                         |          2 |        115 |         18 |          8 |        141 |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                    | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/ztlab66/Documents/utkarsh/login_signup/README.md                                                     | Markdown   |         10 |          0 |          7 |         17 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/analysis_options.yaml                                         | YAML       |          3 |         23 |          4 |         30 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/build.gradle                                      | Groovy     |         58 |          3 |         14 |         75 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/debug/AndroidManifest.xml                     | XML        |          4 |          3 |          1 |          8 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/main/AndroidManifest.xml                      | XML        |         30 |          6 |          1 |         37 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/main/res/drawable-v21/launch_background.xml   | XML        |          4 |          7 |          2 |         13 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/main/res/drawable/launch_background.xml       | XML        |          4 |          7 |          2 |         13 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/main/res/values-night/styles.xml              | XML        |          9 |          9 |          1 |         19 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/main/res/values/styles.xml                    | XML        |          9 |          9 |          1 |         19 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/app/src/profile/AndroidManifest.xml                   | XML        |          4 |          3 |          1 |          8 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/build.gradle                                          | Groovy     |         27 |          0 |          5 |         32 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/gradle.properties                                     | Properties |          3 |          0 |          1 |          4 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/gradle/wrapper/gradle-wrapper.properties              | Properties |          5 |          1 |          1 |          7 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/android/settings.gradle                                       | Groovy     |          8 |          0 |          4 |         12 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/AppDelegate.swift                                  | Swift      |         12 |          0 |          2 |         14 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json   | JSON       |        122 |          0 |          1 |        123 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json | JSON       |         23 |          0 |          1 |         24 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md     | Markdown   |          3 |          0 |          2 |          5 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/Base.lproj/LaunchScreen.storyboard                 | XML        |         36 |          1 |          1 |         38 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/Base.lproj/Main.storyboard                         | XML        |         25 |          1 |          1 |         27 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/ios/Runner/Runner-Bridging-Header.h                           | C++        |          1 |          0 |          1 |          2 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/bottom_nav_bar.dart                                       | Dart       |         36 |          0 |          6 |         42 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/dashboard.dart                                            | Dart       |         87 |          2 |         10 |         99 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/homepage.dart                                             | Dart       |        160 |          4 |          6 |        170 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/main.dart                                                 | Dart       |         23 |          3 |          4 |         30 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/models/items.dart                                         | Dart       |         43 |          5 |          5 |         53 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/models/list.dart                                          | Dart       |         30 |         12 |         15 |         57 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/models/vendors.dart                                       | Dart       |          3 |          0 |          3 |          6 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/naivgationdrawer.dart                                     | Dart       |        145 |         18 |          6 |        169 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/NavBarScreens/categories.dart                     | Dart       |         17 |          0 |          4 |         21 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/NavBarScreens/home.dart                           | Dart       |         88 |         45 |         11 |        144 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/NavBarScreens/listofitems.dart                    | Dart       |        127 |          4 |         14 |        145 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/NavBarScreens/more.dart                           | Dart       |        254 |         17 |         13 |        284 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/NavBarScreens/people.dart                         | Dart       |         39 |         23 |          6 |         68 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/about_app.dart                     | Dart       |         14 |          3 |          3 |         20 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/adderss.dart                       | Dart       |         37 |         17 |          7 |         61 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/contact_us.dart                    | Dart       |         14 |          3 |          3 |         20 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/faq.dart                           | Dart       |         14 |          3 |          3 |         20 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/household.dart                     | Dart       |         14 |          0 |          3 |         17 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/password.dart                      | Dart       |         14 |          0 |          3 |         17 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/paymentmethod.dart                 | Dart       |         99 |         10 |          7 |        116 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/terms_and_condition.dart           | Dart       |         14 |          3 |          3 |         20 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/SideBarScreens/user_info.dart                     | Dart       |         14 |          3 |          3 |         20 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/custom_dialog.dart                         | Dart       |          0 |          0 |          1 |          1 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/heart.dart                                 | Dart       |         56 |          3 |          9 |         68 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/itemcard.dart                              | Dart       |        174 |          0 |         10 |        184 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/list_item_details.dart                     | Dart       |        307 |          0 |         23 |        330 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/list_item_filter_menu.dart                 | Dart       |        266 |          0 |         10 |        276 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/list_item_settings.dart                    | Dart       |         12 |          0 |          3 |         15 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/show_profile.dart                          | Dart       |         32 |          0 |          5 |         37 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/skeleton_container.dart                    | Dart       |         31 |          0 |          2 |         33 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/screens/widget/user_data_details.dart                     | Dart       |         60 |          8 |          8 |         76 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/signup.dart                                               | Dart       |        101 |          1 |          3 |        105 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/lib/utils/database_helper.dart                                | Dart       |        145 |         23 |         29 |        197 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/pubspec.yaml                                                  | YAML       |         38 |         49 |          8 |         95 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/test/widget_test.dart                                         | Dart       |         14 |         10 |          7 |         31 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/web/index.html                                                | HTML       |         80 |         18 |          7 |        105 |
+| /Users/ztlab66/Documents/utkarsh/login_signup/web/manifest.json                                             | JSON       |         35 |          0 |          1 |         36 |
+| Total                                                                                                       |            |      3,037 |        360 |        318 |      3,715 |
++-------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

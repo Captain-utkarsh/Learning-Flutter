@@ -14,6 +14,7 @@ class _MoreItemsState extends State<MoreItems> {
   List<String> dropdownSublist = ['Kotlin', 'Java', 'Flutter'];
   List<String> dropdownItems = ['Android', 'IOS', 'QA', 'Web', 'BA'];
   String? dropdownValue = '';
+  int val = 0;
   // TextEditingController _typeaheadController = TextEditingController();
   bool? value1 = false;
   bool? value2 = false;
@@ -53,9 +54,12 @@ class _MoreItemsState extends State<MoreItems> {
                       leading: SizedBox(
                         width: 60,
                         height: 60,
-                        child: Image.network(
-                          user.imageUrl,
-                          fit: BoxFit.cover,
+                        child: Hero(
+                          tag: 'Img index $val',
+                          child: Image.network(
+                            user.imageUrl,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                     );
@@ -71,7 +75,7 @@ class _MoreItemsState extends State<MoreItems> {
             DropdownButton<String>(
                 isExpanded: false,
                 value: dropdownValue,
-                style: TextStyle(color: Colors.blueAccent),
+                style: const TextStyle(color: Colors.blueAccent),
                 elevation: 10,
                 borderRadius: BorderRadius.circular(5.0),
                 icon: const Icon(Icons.arrow_downward_rounded),

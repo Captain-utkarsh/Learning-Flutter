@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const DashBoard(),
       theme: ThemeData(primarySwatch: Colors.blue),
+      // routes: {
+      //    'Profile': (context) =>  Profile(image: ,),
+      // },
     );
   }
 }

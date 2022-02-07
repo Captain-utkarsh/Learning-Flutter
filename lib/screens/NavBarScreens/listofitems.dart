@@ -131,7 +131,7 @@ class _ListOfItemsState extends State<ListOfItems> {
     );
   }
 
-  Widget loadingBar() => LoadingItemCard();
+  Widget loadingBar() => const LoadingItemCard();
 
   Widget itemCard(index) => ItemCard(
         listId: listModelObjects[index].id,
